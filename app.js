@@ -6,7 +6,7 @@ const moviesRouter = require('./routes/movies')
 const app = express()
 
 require('dotenv').config()
-require('./config/db')();
+require('./config/db')()
 app.use(cors({
     origin: '*'
 }))
