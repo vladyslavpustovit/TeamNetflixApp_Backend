@@ -34,14 +34,12 @@ let isUserExsit = checkUser.length > 0
 
 isUserExsit ? await bcrypt.compare(req.body.password , checkUser[0].password) ?
 res.status(200).json({
-    
-    msg:'Logged in',
     token:jwt.sign({username: req.body.username, date: new Date().getTime()},
     process.env.JWT_KEY,
     {expiresIn: '1h'}
     )
 }) :
-res.status(401).json({msg:'Password or Username uncorrect'}) :
+res.status(401).json({msg:'Password or Username incorrect'}) :
 
  res.status(401).json({msg:'User not found'})
 

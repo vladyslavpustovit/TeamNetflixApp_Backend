@@ -22,6 +22,6 @@ router.patch("/:id", verifyToken, updateMovie);
 //////end movies
 
 ///start categories
-router.get("/genres/:genres", verifyToken, getMoviesByGenre);
+router.get("/genres/:genre", verifyToken, getMoviesByGenre);
 ///end categories
 module.exports = router;
