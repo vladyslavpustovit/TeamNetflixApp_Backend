@@ -11,22 +11,15 @@ app.use(cors({
     origin: '*'
 }))
 
-
 app.use(express.json())
-
 
 app.get('/',(req,res)=>{
     res.status(200).json("Home Page")
 })
 
-
-
-
 app.use('/users', usersRouter)
 
 app.use('/movies', moviesRouter)
-
-
 
 app.listen(process.env.PORT , (err)=>{
     err? console.log(err): console.log("Port is on");
