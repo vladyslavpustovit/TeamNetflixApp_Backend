@@ -8,11 +8,13 @@ const {
   addMovie,
   updateMovie,
   getMoviesByGenre,
+  scrapMovieTeaser,
 } = require("../controllers/moviesController");
 
 //// start movies
 router.get("/", verifyToken, getMovies);
 router.get("/:id", verifyToken, getMovie);
+router.get('/teaser/title/:imdbId', scrapMovieTeaser)
 
 router.delete("/:id", verifyToken, deleteMovie);
 
