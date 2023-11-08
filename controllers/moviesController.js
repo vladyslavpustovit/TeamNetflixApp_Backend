@@ -60,7 +60,7 @@ const getMoviesByGenre = async (req, res) => {
         const movies = await moviesModel.find({ genre: genre }); // Use genres as an array of strings
         res.json(movies);
     } catch (error) {
-        res.status(500).json({ error: "Genre not found" });
+        res.status(500).json({ error: "No movies found" });
     }
 }
 
